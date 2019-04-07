@@ -9,15 +9,21 @@ char pn[10][10],t[10];
 
 int main()
 {
-    //clrscr();
+   
     printf("Enter the number of process:");
     scanf("%d",&n);
     for(i=0; i<n; i++)
     {
-        printf("Enter Process Name || Arrival Time || Execution Time:");
+        printf("Enter Process Name || Arrival Time : ");
         //flushall();
-        scanf("%s%d%d",pn[i],&at[i],&et[i]);
+        scanf("%s%d",pn[i],&at[i]);
+        et[i]=2*at[i];
     }
+    for(i=0;i<n;i++)
+    {
+       printf("The execution time for %s : %d  ||\n",pn[i],et[i]);
+    }
+
     printf("Select sheduling algorithm \n");
     int p=0;
     printf("Press 1 : Longest job first or Press 2 : Shortest job first :");
@@ -66,11 +72,11 @@ int main()
     }
     awt=(float)totwt/n;
     ata=(float)totta/n;
-    printf("\nProcess name\tArrival time\tExecution time\tWaiting time\tTurnaround-time");
+    printf("\nP_name\tArrival_time\tExecu_time\tWaitingtime\tTurnaround-time");
     for(i=0; i<n; i++)
-        printf("\n%s\t%5d\t\t%5d\t\t%5d\t\t%5d",pn[i],at[i],et[i],wt[i],ta[i]);
-    printf("\nAverage Waiting time is:%f",awt);
-    printf("\nAverage Turnaroundtime is:%f",ata);
+        printf("\n%s\t\t%5d\t\t%5d\t\t%5d\t\t%5d",pn[i],at[i],et[i],wt[i],ta[i]);
+    printf("\nAverage Waiting time is : %f",awt);
+    printf("\nAverage Turnaroundtime is : %f",ata);
     getch();
 }
 
