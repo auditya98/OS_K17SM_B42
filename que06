@@ -19,6 +19,8 @@ int main()
   }
   printf("Enter Time Quantum:\t");
   scanf("%d",&time_quantum);
+  if(time_quantum<11)
+  {
   printf("\n\nProcess\t|Turnaround Time|Waiting Time\n\n");
   for(time=0,count=0;remain!=0;)
   {
@@ -50,6 +52,11 @@ int main()
   }
   printf("\nAverage Waiting Time= %f\n",wait_time*1.0/n);
   printf("Avg Turnaround Time = %f",turnaround_time*1.0/n);
-
+  }
+  else
+  {
+  printf("Enter time quantum less than 10!");
+  main();
+  }
   return 0;
 }
